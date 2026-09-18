@@ -1,0 +1,21 @@
+# Track IDE configuration files in this workspace repository, even when globally ignored.
+
+!/.vscode/
+!/.vscode/**
+
+!/.zed/
+!/.zed/**
+
+!/.idea/
+!/.idea/**
+
+# Keep cloned project repositories independent from this workspace-manifest repository.
+/design-system/
+/amsterdam-agent-skills/
+/design-system-prototypes/
+/development-standards/
+/ee-ads-rhf/
+/ee-docs/
+/ee-react-form-demos/
+/ee-react-map-demos/
+/ee-react-template/

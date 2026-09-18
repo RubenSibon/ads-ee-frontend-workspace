@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "amsterdam-design-system": {
+      "type": "http",
+      "url": "https://main--68db9df886b46f139748c074.chromatic.com/mcp"
+    }
+  }
+}

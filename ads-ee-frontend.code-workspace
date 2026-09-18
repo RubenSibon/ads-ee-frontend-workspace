@@ -1,0 +1,57 @@
+{
+  "folders": [
+    {
+      "name": "design-system (primary)",
+      "path": "design-system"
+    },
+    {
+      "path": "amsterdam-agent-skills"
+    },
+    {
+      "path": "design-system-prototypes"
+    },
+    {
+      "path": "development-standards"
+    },
+    {
+      "path": "ee-ads-rhf"
+    },
+    {
+      "path": "ee-docs"
+    },
+    {
+      "path": "ee-react-form-demos"
+    },
+    {
+      "path": "ee-react-map-demos"
+    },
+    {
+      "path": "ee-react-template"
+    }
+  ],
+  "settings": {
+    "css.format.enable": false,
+    "css.validate": false,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always",
+      "source.fixAll.stylelint": "always"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "eslint.useFlatConfig": true,
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ],
+    "less.validate": false,
+    "scss.format.enable": false,
+    "scss.validate": false,
+    "stylelint.validate": [
+      "css",
+      "scss"
+    ]
+  }
+}
