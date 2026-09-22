@@ -130,26 +130,6 @@ Rationale:
 - VS Code uses `.vscode/mcp.json` as its documented workspace MCP location.
 - Agent Host and cross-tool workflows can read portable workspace MCP configuration from `.mcp.json`.
 
-## MCP sync commands
-
-Sync:
-
-```bash
-node scripts/sync-mcp-config.mjs
-```
-
-Validate (CI or pre-commit):
-
-```bash
-node scripts/sync-mcp-config.mjs --check
-```
-
-Behavior:
-
-- Source: `.mcp.json`
-- Target: `.vscode/mcp.json`
-- `--check` exits non-zero when files differ.
-
 ## Contribution expectations
 
 - Keep workspace policy changes documented in this README.
