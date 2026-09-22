@@ -116,6 +116,8 @@ The following files are intentionally versioned:
 - `.vscode/mcp.json`
 - `.zed/settings.json`
 - `.editorconfig`
+- `AGENTS.md`
+- `.agents/skills/` and `skills-lock.json`
 
 This workspace may also track additional IDE files under `.vscode/`, `.zed/`, and `.idea/` by explicit policy.
 
