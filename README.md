@@ -8,6 +8,8 @@ Use this multi-root workspace definition:
 
 - `ads-ee-frontend.code-workspace`
 
+It lists the core repositories first and recommends the VS Code extensions this workspace relies on.
+
 ## Goal
 
 Enable ADS and EE frontend developers to manage, maintain, and evolve the projects that teams use or consult for consumer-facing applications and websites, both public and internal.
@@ -16,39 +18,43 @@ Enable ADS and EE frontend developers to manage, maintain, and evolve the projec
 
 - A multi-root workspace definition that references ADS and EE frontend repositories by local folder name.
 - A curated list of repositories that teams use as implementation and reference sources.
-- Shared workspace-level policies for IDE setup, MCP, and formatting ownership.
+- Shared workspace-level policies for IDE setup, MCP, formatting ownership and [agent skills](AGENT-SKILLS.md).
 
-Repository folder names referenced by the workspace file (you clone these yourself):
+Core repositories:
 
 - `design-system`
-- `amsterdam-agent-skills`
-- `design-system-prototypes`
 - `development-standards`
-- `ee-ads-rhf`
 - `ee-docs`
+
+Supporting repositories:
+
+- `ee-ads-rhf`
 - `ee-react-form-demos`
 - `ee-react-map-demos`
 - `ee-react-template`
+- `design-system-prototypes`
+- `amsterdam-agent-skills`
 
 ## Repository bootstrap
 
-If you want to recreate this workspace on a new machine, clone the repositories listed above from the Amsterdam GitHub organisation:
-
-Clone all at once (HTTPS):
+Clone the repositories from the Amsterdam GitHub organisation into this folder with the bootstrap script, from the workspace root:
 
 ```sh
-for repo in design-system amsterdam-agent-skills design-system-prototypes development-standards ee-ads-rhf ee-docs ee-react-form-demos ee-react-map-demos ee-react-template; do
-  git clone "https://github.com/Amsterdam/${repo}.git"
-done
+./scripts/clone-repos.sh core https  # the core repositories over HTTPS
+./scripts/clone-repos.sh all ssh     # every repository over SSH
 ```
 
-Clone all at once (SSH):
+The script skips repositories that are already cloned.
+VS Code and Zed offer the same commands as tasks when you open this repository root.
 
-```sh
-for repo in design-system amsterdam-agent-skills design-system-prototypes development-standards ee-ads-rhf ee-docs ee-react-form-demos ee-react-map-demos ee-react-template; do
-  git clone "git@github.com:Amsterdam/${repo}.git"
-done
-```
+This workspace intentionally does not use Git submodules.
+The nested repositories stay independent, keep their own history and remotes, and are ignored by this workspace-manifest repository.
+
+## Editor support
+
+- VS Code: `.vscode/settings.json` makes the source control view find the core repositories when you open this repository root.
+- Zed: `.zed/settings.json` includes the core repositories in file scans, although this repository ignores them, and excludes their `node_modules`.
+- JetBrains IDEs detect the nested Git repositories themselves, so this workspace ships no `.idea` configuration.
 
 ## Working model
 
@@ -116,10 +122,10 @@ The following files are intentionally versioned:
 - `.vscode/mcp.json`
 - `.zed/settings.json`
 - `.editorconfig`
-- `AGENTS.md`
+- `AGENTS.md` and `AGENT-SKILLS.md`
 - `.agents/skills/` and `skills-lock.json`
 
-This workspace may also track additional IDE files under `.vscode/`, `.zed/`, and `.idea/` by explicit policy.
+This workspace may also track additional IDE files under `.vscode/` and `.zed/` by explicit policy.
 
 ### MCP dual-file policy
 
@@ -135,4 +141,4 @@ Rationale:
 ## Contribution expectations
 
 - Keep workspace policy changes documented in this README.
-- Include MCP sync-check evidence in pull requests when MCP files change.
+- When you change `.mcp.json` or `.vscode/mcp.json`, make the same change in the other file.

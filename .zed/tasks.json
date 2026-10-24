@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Clone core repos (HTTPS)",
+    "command": "./scripts/clone-repos.sh",
+    "args": ["core", "https"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Clone core repos (SSH)",
+    "command": "./scripts/clone-repos.sh",
+    "args": ["core", "ssh"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Clone all repos (HTTPS)",
+    "command": "./scripts/clone-repos.sh",
+    "args": ["all", "https"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  },
+  {
+    "label": "Clone all repos (SSH)",
+    "command": "./scripts/clone-repos.sh",
+    "args": ["all", "ssh"],
+    "cwd": "$ZED_WORKTREE_ROOT"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Clone core repos (HTTPS)",
+      "type": "shell",
+      "command": "./scripts/clone-repos.sh",
+      "args": ["core", "https"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Clone core repos (SSH)",
+      "type": "shell",
+      "command": "./scripts/clone-repos.sh",
+      "args": ["core", "ssh"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Clone all repos (HTTPS)",
+      "type": "shell",
+      "command": "./scripts/clone-repos.sh",
+      "args": ["all", "https"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Clone all repos (SSH)",
+      "type": "shell",
+      "command": "./scripts/clone-repos.sh",
+      "args": ["all", "ssh"],
+      "problemMatcher": []
+    }
+  ]
+}

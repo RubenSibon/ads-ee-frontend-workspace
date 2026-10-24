@@ -6,9 +6,6 @@
 !/.zed/
 !/.zed/**
 
-!/.idea/
-!/.idea/**
-
 # Keep cloned project repositories independent from this workspace-manifest repository.
 /design-system/
 /amsterdam-agent-skills/

@@ -17,17 +17,21 @@ When two sources conflict, say so instead of silently following either.
 
 ## Repositories
 
-| Repository                 | Source of truth for                                               | Package manager |
-| -------------------------- | ----------------------------------------------------------------- | --------------- |
-| `development-standards`    | Engineering standards and policies, in Markdown                   | none            |
-| `ee-docs`                  | The Docusaurus site that publishes `development-standards`        | npm             |
-| `design-system`            | ADS tokens, CSS, React components and Storybook documentation     | pnpm            |
-| `ee-ads-rhf`               | `@amsterdam/ee-ads-rhf`: ADS form components with React Hook Form | npm             |
-| `ee-react-form-demos`      | Storybook demos of common form use cases                          | npm             |
-| `ee-react-map-demos`       | Storybook demos of common map use cases with Leaflet              | npm             |
-| `ee-react-template`        | A Vite starter for React applications                             | npm             |
-| `amsterdam-agent-skills`   | General agent skills, maintained by the Innovation team           | none            |
-| `design-system-prototypes` | Next.js prototypes built with the ADS packages                    | pnpm            |
+The core repositories are the default working set.
+When a task could touch several repositories and the prompt does not narrow it down, check those first.
+Use the supporting repositories only when the user asks for them.
+
+| Repository                 | Set        | Source of truth for                                               | Package manager |
+| -------------------------- | ---------- | ----------------------------------------------------------------- | --------------- |
+| `development-standards`    | core       | Engineering standards and policies, in Markdown                   | none            |
+| `ee-docs`                  | core       | The Docusaurus site that publishes `development-standards`        | npm             |
+| `design-system`            | core       | ADS tokens, CSS, React components and Storybook documentation     | pnpm            |
+| `ee-ads-rhf`               | supporting | `@amsterdam/ee-ads-rhf`: ADS form components with React Hook Form | npm             |
+| `ee-react-form-demos`      | supporting | Storybook demos of common form use cases                          | npm             |
+| `ee-react-map-demos`       | supporting | Storybook demos of common map use cases with Leaflet              | npm             |
+| `ee-react-template`        | supporting | A Vite starter for React applications                             | npm             |
+| `amsterdam-agent-skills`   | supporting | General agent skills, maintained by the Innovation team           | none            |
+| `design-system-prototypes` | supporting | Next.js prototypes built with the ADS packages                    | pnpm            |
 
 Change a standard in `development-standards`, never in `ee-docs`: `npm run import-docs` overwrites its `docs/backend`, `docs/frontend`, `docs/general` and `docs/intro.md`.
 Never edit `.agents/skills` by hand either: those are installed copies, tracked in `skills-lock.json`, and `node scripts/check-skills.mjs` reports when they fall behind.
